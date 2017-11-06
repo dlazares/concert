@@ -77,11 +77,12 @@ namespace Kino
 //			AudioPeer._freqBand[3]
 		}
 
+		[SerializeField] public Shader _shader;
+
 		#endregion
 
 		#region Private Properties
 
-		[SerializeField] Shader _shader;
 
 		Material _material;
 
