@@ -60,7 +60,7 @@ public class RadialSlider: MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 					//GetComponent<Image>().color = Color.Lerp(Color.green, Color.red, angle);
 
-					Debug.Log(localPos+" : "+angle);	
+//					Debug.Log(localPos+" : "+angle);	
 				}
 
 				yield return 0;

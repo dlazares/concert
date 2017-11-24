@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour {
 	// State
-	float timer=10f;
+	float timer=7f;
 	bool timerRunning=true;
 
 	// UI Componenets

@@ -14,20 +14,15 @@ public class Channel1 : Channel {
 	// Update is called once per frame
 	void Update () {
 		if (glitch != null) {
-			float total = 0f;
-			foreach (float val in AudioPeer._freqBand) {
-				total += val;
-			}
-			glitch.intensity = AudioPeer._freqBand [4]/total;
+			glitch.intensity = (AudioPeer._freqBand [0]+AudioPeer._freqBand[1]+AudioPeer._freqBand[2])*2;
+			Debug.Log (glitch.intensity);
 		}
 	}
 
 	public override void Play(){
 		Debug.Log ("play channel 1");
-//		Debug.Log (AudioPeer._freqBand [AudioPeer._freqBand.Length/2]);
 		glitch = Camera.main.gameObject.AddComponent<DigitalGlitch>();
 		glitch._shader = digitalGlitchShader;
-		Debug.Log (glitch._shader);
 	}
 
 	public override void Stop(){
