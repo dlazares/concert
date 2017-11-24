@@ -273,7 +273,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: 
+  cameraUsageDescription: Camera needed for filters and effects
   locationUsageDescription: 
   microphoneUsageDescription: 
   switchNetLibKey: 
