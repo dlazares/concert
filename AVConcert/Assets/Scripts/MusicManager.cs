@@ -5,26 +5,11 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour {
 
 	public GameObject SoundEditUI;
-	public GameObject MainUI;
+	public GameObject ChannelList;
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	public void OpenSoundEdit(){
-		MainUI.SetActive (false);
-		SoundEditUI.SetActive (true);
-	}
-
-	public void CloseSoundEdit(){
-		MainUI.SetActive (true);
-		SoundEditUI.SetActive (false);
+	public void OnAudioControlClick(){
+		Debug.Log ("audio control clicked");
+		SoundEditUI.SetActive (!SoundEditUI.active);
+		ChannelList.SetActive (!ChannelList.active);
 	}
 }
