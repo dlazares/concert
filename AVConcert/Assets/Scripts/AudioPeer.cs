@@ -8,11 +8,19 @@ public class AudioPeer : MonoBehaviour {
 AudioSource _audioSource;
 	public static float[] _samples = new float[512];
 	public static float[] _freqBand = new float[8];
+	string microphone;
 // Use this for initialization
 	void Start () 
 	{
 		_audioSource = GetComponent<AudioSource> ();
-		_audioSource.clip = Microphone.Start("Built-in Microphone", true, 10, 44100);
+		// Get Available Microhpones
+		foreach (string device in Microphone.devices) {
+			if (microphone == null) {
+				Debug.LogFormat ("{0} is an available microphone", device);
+				microphone = device;
+			}
+		}
+		_audioSource.clip = Microphone.Start(microphone, true, 10, 44100);
 		_audioSource.loop = true;
 		while(!(Microphone.GetPosition(null) > 0 )) {}
 		_audioSource.Play();
