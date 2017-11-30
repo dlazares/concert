@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 [RequireComponent (typeof (AudioSource))]
 public class AudioPeer : MonoBehaviour {
 AudioSource _audioSource;
-	public static float[] _samples = new float[512];
+	public static float[] _samples = new float[256];
 	public static float[] _freqBand = new float[8];
 	string microphone;
 // Use this for initialization
@@ -20,7 +20,7 @@ AudioSource _audioSource;
 				microphone = device;
 			}
 		}
-		_audioSource.clip = Microphone.Start(microphone, true, 10, 44100);
+		_audioSource.clip = Microphone.Start(microphone, true, 13, 48000);
 		_audioSource.loop = true;
 		while(!(Microphone.GetPosition(null) > 0 )) {}
 		_audioSource.Play();
