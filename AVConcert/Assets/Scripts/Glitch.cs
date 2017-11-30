@@ -74,7 +74,7 @@ namespace Kino
 		public float colorDrift {
 			get { return _colorDrift; }
 			set { _colorDrift = value; }
-//			AudioPeer._freqBand[3]
+	//		AudioPeer._freqBand[4]
 		}
 
 		[SerializeField] public Shader _shader;
@@ -101,7 +101,7 @@ namespace Kino
 			}
 
 //			_verticalJumpTime += Time.deltaTime * _verticalJump * 11.3f;
-			_verticalJumpTime += Time.deltaTime * AudioPeer._freqBand[0] * 11.3f;
+			_verticalJumpTime += Time.deltaTime * AudioPeer._freqBand[2] * 11.3f;
 
 			var sl_thresh = Mathf.Clamp01(1.0f - _scanLineJitter * 1.2f);
 			var sl_disp = 0.002f + Mathf.Pow(_scanLineJitter, 3) * 0.05f;
